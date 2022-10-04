@@ -1,0 +1,63 @@
+	Database name: rpsb
+
+
+(a) table name: angel_tbl:
+
+	CREATE TABLE `angel_tbl` (
+	`angel_id` int(11) NOT NULL,
+	`angel_name` varchar(45) NOT NULL,
+	`angel_email` varchar(45) NOT NULL,
+	`angel_mobile` varchar(13) NOT NULL,
+	`angel_address` varchar(200) NOT NULL,
+	`angel_message` varchar(250) NOT NULL,
+	PRIMARY KEY (`angel_id`);
+	
+	
+(b) table name: login_tbl:-
+	
+    CREATE TABLE `login_tbl` (
+    `login_id` int(11) NOT NULL,
+    `email` varchar(45) NOT NULL,
+    `password` varchar(45) NOT NULL,
+    PRIMARY KEY (`login_id`);
+	
+
+(c) table name: ngo_branch_tbl:-
+
+	CREATE TABLE `ngo_branch_tbl` (
+    `branch_id` int(11) NOT NULL,
+    `ngo_owner _name` varchar(45) NOT NULL,
+    `branch_email` varchar(30) NOT NULL,
+    `branch_contactno` varchar(13) NOT NULL,
+    `branch_address` varchar(250) NOT NULL,
+    `branch_date` varchar(10) NOT NULL,
+    PRIMARY KEY (`branch_id`);
+	
+
+(d) table name: registration_tbl:-
+
+	CREATE TABLE `registration_tbl` (
+    `id` int(11) NOT NULL,
+    `name` varchar(45) NOT NULL,
+    `father_name` varchar(45) NOT NULL,
+    `mobile` varchar(13) NOT NULL,
+    `dob` varchar(10) NOT NULL,
+    `gender` varchar(10) NOT NULL,
+    `interest_area` varchar(30) NOT NULL,
+    `remark` varchar(75) NOT NULL,
+    `address` varchar(250) NOT NULL,
+    PRIMARY KEY (`id`);
+
+	
+(e) table name: user_tbl:-
+
+	CREATE TABLE `user_tbl` (
+    `user_id` int(11) NOT NULL,
+    `user_name` varchar(45) NOT NULL,
+    `user_fname` varchar(45) NOT NULL,
+    `user_gender` varchar(10) NOT NULL,
+    `user_email` varchar(40) NOT NULL,
+    `user_mobile` varchar(13) NOT NULL,
+    `user_address` varchar(200) NOT NULL,
+    `user_pincode` int(6) NOT NULL,
+    PRIMARY KEY (`user_id`);
