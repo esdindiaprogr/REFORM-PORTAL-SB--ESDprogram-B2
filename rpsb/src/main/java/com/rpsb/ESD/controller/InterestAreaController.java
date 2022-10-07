@@ -39,7 +39,7 @@ return service.getInterestAreaById(id);
 
 @GetMapping("/allInterestAreaRecord")
 public List<InterestArea> getAllInterestArea(){
-return service.getAllInterestArea();
+return service.getAllInterestAreadetail();
 }
 
 @PostMapping("/addInterestarea")

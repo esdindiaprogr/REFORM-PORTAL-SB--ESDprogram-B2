@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 //import com.rpsp.ESD.model.Employee;
 
+import com.rpsb.ESD.model.InterestArea;
 import com.rpsb.ESD.repository.InterestAreaRepository;
 
 @Service
@@ -20,10 +21,7 @@ public class InterestAreaService<InterestArea> {
 	  @Autowired
 	  private InterestAreaRepository repository;
 	  
-	  public Optional<InterestAreaRepository> getAllInterestAreaById(long id){
-		   return repository.findById(id);
-	  }
-     
+	 
 	  public List<InterestArea> getAllInterestAreadetail(){
 		     Iterable<InterestArea> lstArea =    (Iterable<InterestArea>) repository.findAll();
 		     List<InterestArea> lst = new ArrayList<InterestArea>();
@@ -37,15 +35,15 @@ public class InterestAreaService<InterestArea> {
 		  return"deleted";
 	  }
 	  
-	  public InterestAreaRepository updateInterestArea(InterestArea newAngle , Long id) {
+	 // public InterestAreaRepository updateInterestArea(InterestArea newAngle , Long id) {
 		 // log.info("Updating the record");
-		  InterestAreaRepository angle = repository.findById(id).get();
-		  return repository.save(angle);
-	  }
+		//  InterestAreaRepository angle = (InterestAreaRepository) repository.findById(id).get();
+		//  return repository.save(angle);
+	 // }
 
 	public Optional<com.rpsb.ESD.model.InterestArea> getInterestAreaById(Long id) {
 		
-		return null;
+		return repository.findById(id);
 	}
 
 	public void addInterestArea(com.rpsb.ESD.model.InterestArea angle) {
