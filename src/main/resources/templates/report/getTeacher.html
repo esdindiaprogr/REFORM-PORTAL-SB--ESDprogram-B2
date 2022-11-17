@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:replace="fragments/header :: header-css" />
+</head>
+<body>
+
+	<div th:replace="fragments/header :: rheader"></div>
+	<div class="container" align="center">
+		<div class="starter-template">
+			<h1 th:inline="text">Teacher's details :</h1>
+			<form action="#" method="post" th:action="@{/super/admin/disbaleTeacher}" th:object="${user}">
+				<table>
+					<tr><td>Teacher's Id</td><td> <input type="text" th:field="*{id}"/></td></tr>
+					<tr><td>First Name</td><td><input type="text" th:field="*{firstName}"/></td></tr>
+					<tr><td>Last Name</td><td><input type="text" th:field="*{lastName}"/></td></tr>
+					<tr><td>Login id </td><td><input type="text" th:field="*{userName}"/></td></tr>
+					<tr><td>Password </td><td><input type="text" th:field="*{password}"/></td></tr>
+					<tr><td>Role </td><td><input type="text" th:field="*{roles}"/></td></tr>
+					<tr><td>Date</td><td><input type="date" th:field="*{created_date}"/> </td></tr>
+					<tr><td>Subject</td><td> <input type="text" th:field="*{subject}"/></td></tr>
+					<tr><td>Class</td><td> <input type="text" th:field="*{standard}"/></td></tr>
+					<tr><td>Status</td><td> <input type="text" th:field="*{status}"/></td></tr>
+					<tr><td colspan="2"><h3>User won't able to login </h3></td></tr>
+					<tr><td><a th:href="@{/home}"> <input type="button" value="Cancel" /></a></td>
+						<td><input type="submit" value="Confirm" /></td>
+						</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+
+	<div th:replace="fragments/footer :: footer"></div>
+	<script type="text/javascript" src="webjars/jquery/2.2.4/jquery.min.js"></script>
+</body>
+</html>

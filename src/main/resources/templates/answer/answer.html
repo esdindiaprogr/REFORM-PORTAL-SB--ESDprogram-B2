@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <div th:replace="fragments/header :: header-css" /> 
+ <style>
+table, th, td {
+	border: 1px solid blue;
+}
+</style>
+ </head>
+<body>
+
+	<div th:replace="fragments/header :: header" ></div>
+	<div class="container">
+
+		<div class="starter-template">
+			
+			<form action="#" th:action="@{/admin/answer}" th:object="${answer}" method="post" enctype="multipart/form-data">
+			<div align="center"> 
+			<h3>Question:[<span th:color:red th:text="${question}"></span>]
+			Status:[<span th:text="${status}"/></span>]
+			subject:[<span th:text="${subject}"/></span>]</h3>
+			</div>
+				
+				<table border="1" align="center">
+				<tr><td> Question Id</td>
+				    <td><input type="text" id="question_id" th:field="${answer.question_id}" readonly/></td>
+				    <td> Answer Id</td>
+				    <td><input type="text" id="id" th:field="${answer.id}" readonly/></td>
+				    
+				</tr>
+					<tr>
+						<td>Answer</td>
+						<td colspan="3"><textarea rows="9" cols="83" name="answer" th:field="${answer.answer}"
+								id="answer">Enter Answer details here...</textarea>
+						</td>
+					</tr>
+					<tr>
+						<td>Student's Name</td>
+						<td>
+							<input type= "text" id="studentName" th:field="${answer.studentName}" size="31">
+						</td>
+						<td>Teacher's Name</td>
+						<td>
+							<input type="text" th:field="${answer.teacherName}" size="31">
+						</td>
+					</tr>
+					    <tr>
+						  <td colspan="4">File Upload : <input  id="singleFileUploadInput" type="file" name="file"/></td>
+						</tr>
+				</table>
+				<div align="center">
+					<input type="submit" value="Submit" />
+					<a th:href="@{/home}"> <input type="button" value="Cancel" /> </a>
+				</div>
+			</form>
+			
+			<div>
+			<!--  
+			Here we need the functionality of image/jpg.pdf upload later this image can 
+			be donwloaded from the answer list	submit and reset option should be after this code 
+			-->
+			</div>
+		</div>
+
+	</div>
+	<!-- /.container -->
+
+	<div th:replace="fragments/footer :: footer" ></div>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <div th:replace="fragments/header :: header-css" /> 
+</head>
+<body>
+	<div th:replace="fragments/header :: header" ></div>
+	<div class="container">
+		<div class="starter-template">
+			
+			<div align="center">
+			<h3>Answer is :</h3>
+			<form action = "" method="post" >
+			<table>
+			<tr>
+					<th>Answer Id</th>
+					<th>Answer</th>
+					<th>File Name</th>
+			</tr>
+			<tr th:each="oldAns : ${answerList}">
+					<td th:text="${oldAns.id}"      align="center"></td>
+					<td th:text="${oldAns.answer}"  align="center"></td>
+					<td> <a th:href="@{/user/{fileName} (fileName=${oldAns.id})}" th:text="${oldAns.fileName}" ></a></td>
+			</tr>
+			</table>
+			</form>
+			</div>
+			
+			<form action="#" th:action="@{/user/student/discuss}" th:object="${answer}" method="post" enctype="multipart/form-data">
+				<table border="1" align="center">
+				<tr><td> Question Id</td>
+				    <td><input type="text" id="question_id" th:field="${answer.question_id}" readonly size="12"/></td>
+				    <td> Answer Id</td>
+				    <td><input type="text" id="id" th:field="${answer.id}" readonly size="12"/></td>
+				    <td>Subject</td>
+						<td>
+						    <select id="subject" name="${subject}"> 
+						        <option th:value="mat">Mat</option>
+								<option th:value="phy">Phy</option>
+								<option th:value="che">Che</option>
+								<option th:value="eng">Eng</option>
+								<option th:value="sos">Sos</option>
+								<option th:value="eco">Eco</option>
+						    </select> 
+						  </td>
+				</tr>
+				
+					
+					<tr>
+						<td>Answer</td>
+						<td colspan="5"><textarea rows="8" cols="83" name="answer" th:field="${answer.answer}"
+								id="answer">Enter Answer details here...</textarea>
+						</td>
+					</tr>
+					<tr>
+						<td>Student's Name</td>
+						<td colspan="2">
+							<input type= "text" id="studentName" th:field="${answer.studentName}" size="25">
+						</td>
+						<td>Teacher's Name</td>
+						<td colspan="2">
+							<input type="text" th:field="${answer.teacherName}" size="25">
+						</td>
+					</tr>
+					    <tr>
+						<td colspan="2">File Upload : <input  id="singleFileUploadInput" type="file" name="file" />
+						</td>
+					</tr>
+				</table>
+				<div align="center">
+					<input type="submit" value="Submit" />
+					<a th:href="@{/user/answerList}"> <input type="button" value="Cancel" /> </a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- /.container -->
+	<div th:replace="fragments/footer :: footer" ></div>
+</body>
+</html>

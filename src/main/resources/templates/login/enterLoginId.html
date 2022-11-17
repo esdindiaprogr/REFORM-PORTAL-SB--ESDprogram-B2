@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>User creation form</title>
+ <div th:replace="fragments/header :: header-css"/>
+ 
+ </head>
+<body>
+
+	<div th:replace="fragments/header :: header"></div>
+	<div class="container">
+		<div class="starter-template" align="center">
+			<h3> Enter user login-id to change the password </h3>
+			<div>&nbsp;</div>
+			
+			 <form action="#" th:action="@{/admin/searchUsingLoginId}" th:object="${user}" method="post"> 
+			 	<table >
+					<tr>
+						<td >Enter Login Id : </td>
+						<td ><input th:name="userName" th:value="${userName}" /> </td>
+						<td><input type="submit"  th:value ="Search" /></td>
+					</tr> 
+                        
+					 </table>  
+					 </form> 
+					 <div>&nbsp;</div>
+					<div>
+ 						<a th:href="@{/home}"><input type="button" value="Cancel" /></a>
+					</div>
+			
+		</div>
+
+	</div>
+	<!-- /.container -->
+
+	<div th:replace="fragments/footer :: footer" /></div>
+
+</body>
+</html>

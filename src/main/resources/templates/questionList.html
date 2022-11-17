@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <div th:replace="fragments/header :: header-css" />
+
+</head>
+<body>
+
+	<div th:replace="fragments/header :: header" /></div>
+	<div class="container" align="center">
+		<div class="starter-template">
+			<h1 th:inline="text">Your question : 
+				[[${#httpServletRequest.remoteUser}]]!</h1>
+
+						 <form th:action="@{/user/search/question}" method="post">
+						 <div>
+						 <span th:inline="text"> Type question text :  </span><input type="text" name="question"/> <input type="submit" value="Search"/>
+						 </div> <div>&nbsp;</div>
+						 <div>
+							<table>
+								<thead>
+									<tr>
+										<th>Id</th>
+										<th>Question</th>
+										<th>Sub</th>
+										<th>Date</th>
+										<th>Name</th>
+										<th>Status</th>
+										<th>Edit</th>
+										<th>-Phase-</th>
+										<th>Response</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:if="${questionList.empty}">
+										<td colspan="2">No Question Available</td>
+									</tr>
+									<tr th:each="quest : ${questionList}">
+										<td><span th:text="${quest.Id}"> Id </span></td>
+										<td><span th:text="${quest.question}">
+												Question </span></td>
+										<td><span th:text="${quest.subject}">
+												Subject </span></td>
+										 <td><span th:text="${quest.question_date}">
+												Question Date </span></td>
+									  	<td><span th:text="${quest.studentName}"> Student
+												Name </span></td> 
+										<td><span th:text="${quest.status}"> Student
+												Name </span></td> 
+										<td><a th:href="@{/question/edit(id=${quest.id})}">Edit</a></td>
+										<td><a th:href="@{/admin/question/closeIt(id=${quest.id})}">Close it</a></td>
+										<td><a th:href="@{/admin/answer(id=${quest.id},
+										                                studentName=${quest.studentName},
+										                                question=${quest.question},
+										                                status=${quest.status},
+										                                subject=${quest.subject}
+										                                )
+										                  }">Answer</a></td>
+									</tr>
+								</tbody>
+							</table>
+							</div>
+							<div>&nbsp;</div>
+							<div>
+							Total items: [[${totalItems}]] - current page [[${currentPage}]] of  [[${totalPages}]]
+							 &nbsp; - &nbsp;
+							 
+							  <a th:if="${currentPage > 1}"  th:href ="@{/user/questionList/1}"> First</a>
+									<span th:unless="${currentPage>1}"> First</span>
+							 &nbsp;
+							 <a th:if="${currentPage > 1}"  th:href ="@{'/user/questionList/' + ${currentPage-1}}"> Previous</a>
+									<span th:unless="${currentPage>1}"> Previous</span> 
+							  &nbsp; - &nbsp;
+							<span th:each="i: ${#numbers.sequence(1,totalPages)}">
+									<a th:if="${i != currentPage}"  th:href ="@{'/user/questionList/' +${i}}"> [[${i}]]</a>
+									<span th:unless="${i != currentPage}"> [[${i}]]</span>
+							</span>&nbsp;
+							
+							  <a th:if="${currentPage < totalPages}"  th:href ="@{'/user/questionList/'+${currentPage+1}}"> Next</a>
+									<span th:unless="${currentPage < totalPages}"> Next</span>
+							&nbsp;
+							 <a th:if="${currentPage < totalPages}"  th:href ="@{'/user/questionList/' +${totalPages}}"> Last</a>
+									<span th:unless="${currentPage < totalPages}"> Last</span> 
+							
+							
+							</div>
+                         </form>
+                       <div>&nbsp;</div>  
+
+   	  <a th:href="@{/home}"><input type="button" value="Cancel" /></a>
+   	  
+		</div>
+	</div>
+	 <div>&nbsp;</div>
+	<!-- /.container -->
+	<div th:replace="fragments/footer :: footer"></div>
+ </body>
+</html>

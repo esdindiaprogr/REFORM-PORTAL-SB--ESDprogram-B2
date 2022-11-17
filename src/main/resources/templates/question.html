@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:replace="fragments/header :: header-css" > </div>
+<!-- <style>
+table, th, td {
+	border: 1px solid blue;
+}
+</style> -->
+</head>
+<body>
+
+	<div th:replace="fragments/header :: header"></div>
+
+	<div class="container">
+
+		<div class="starter-template">
+			<h1>Question of student </h1>
+			<form action="#" th:action="@{/user/question}" th:object="${question}" method="post">
+			
+				<table border="1" align="center">
+					<tr>
+						<td>Subject</td>
+						<td><select id="subject" name="subject">
+								<option value="mat">Mathematics</option>
+								<option value="phy">Physics</option>
+								<option value="che">Chemistry</option>
+								<option value="eng">English</option>
+								<option value="sos">Social Science</option>
+								<option value="eco">Economics</option>
+								<option value="com">Computers</option>
+						     </select>
+						  </td>
+					</tr>
+					<tr>
+						<td>Question</td>
+
+						<td><textarea rows="14" cols="90" name="question"
+								id="question">Enter question details here...</textarea>
+						</td>
+					</tr>
+
+					<tr>
+						<td>Student Name</td>
+						<td>
+							<span th:text="${loggedUser.userName}" aligh="center">User name</span>
+						</td>
+					</tr>
+				</table>
+				<div align="center">
+					<input type="submit" value="Submit" /> 
+					<a th:href="@{/home}"><input type="button" value="Cancel" /></a>
+				</div>
+			</form>
+		</div>
+
+	</div>
+	<!-- /.container -->
+
+	<div th:replace="fragments/footer :: footer" />
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <div th:replace="fragments/header :: header-css"> </div>
+</head>
+<body>
+
+	<div th:replace="fragments/header :: header" ></div>
+
+		<div class="container">
+
+			<div class="starter-template">
+				<h3 th:inline="text"><span th:text="${msg}"/></span></h3>
+				<form action="#" th:action="@{/user/question}" th:object="${question}" method="post">
+					<table border="1" align="center">
+				 	<tr> <td> Id </td>
+						    <td><input type="text" th:field="*{id}" readonly/></td> 
+						    <td> Status </td><td><input th:field="*{status}" /></td>
+				    </tr>
+					<tr>
+						<td>Subject</td>
+						<td colspan="3">
+						<select id="subject" name="subject" th:field="*{subject}">
+								<option value="mat">Mathematics</option>
+								<option value="phy">Physics</option>
+								<option value="che">Chemistry</option>
+								<option value="eng">English</option>
+								<option value="sos">Social Science</option>
+								<option value="eco">Economics</option>
+								<option value="com">Computers</option>
+						     </select>
+						  </td>
+					</tr>
+					<tr>
+						<td>Question</td>
+ 						<td colspan="3"><textarea rows="14" cols="90" th:field="*{question}"
+								id="question">Enter question details here...</textarea>
+						</td>
+					</tr>
+					<tr>
+						<td>Student Name</td>
+						<td colspan="3"> 
+							<span th:text="${loggedUser.userName}" th:align="center">User name</span>
+						</td>
+					</tr>
+				</table>
+				<div align="center">
+					<span th:if ="${flag}== true"><input type="submit" value="Submit" /> </span> 
+					<a th:href="@{/user/questionList}">
+					<input type="button" value="Cancel" />
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- /.container -->
+	<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

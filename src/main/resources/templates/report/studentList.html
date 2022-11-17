@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+ <div th:replace="fragments/header :: header-css" /> 
+</head>
+<body>
+<div th:replace="fragments/header :: rheader" ></div>
+<div class="container" align="center">
+  <div class="starter-template">
+         <h1 th:inline="text">Student detail's  </h1>
+         <form th:action="@{/logout}" method="post">
+			<table>
+			<thead>
+				<tr>
+					<th>Student's Id</th>
+					<th>Student's Name</th>
+					<th> Date</th>
+					<th>Subject</th>
+					<th>Class</th>
+					<th>Status</th>
+					<th>Deactivate</th>
+				</tr>
+			</thead>
+				<tbody>
+                <tr th:if="${userList.empty}">
+				    <td colspan="2">No User  Available</td>
+				</tr>
+				<tr th:each="user : ${userList}">
+					<td th:text="${user.id}"      align="center"> </td>
+					<td th:text="${user.userName}"      align="center"></td>
+					<td th:text="${user.created_date}"  align="center"></td>
+					<td th:text="${user.subject}" align="center"></td>
+					<td th:text="${user.standard}" align="center"></td>
+					<td th:text="${user.status}" align="center"></td>
+					<td><a th:href="@{/super/admin/getTeacher(teacherName=${user.userName})}">Remove</a></td>
+				</tr>
+		</tbody>		
+			</table>
+			<a th:href="@{/home}">  <input type="button" value="Cancel"/> </a>
+			</form>
+	</div>
+</div>
+	<div th:replace="fragments/footer :: footer" ></div>
+</body>
+</html>
