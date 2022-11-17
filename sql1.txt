@@ -1,0 +1,2 @@
+SELECT * FROM 3user.`registration table`;
+INSERT INTO `3user`.`registration table` (`NAME`, `DEPARTMENT`, `BRANCH`, `ADDRESS`, `email`, `PHONE NUMBER`) VALUES ('SHABIR', 'BTECH', 'ME', 'MUMBAI', 'sha123@gmail.com', '8964587633');

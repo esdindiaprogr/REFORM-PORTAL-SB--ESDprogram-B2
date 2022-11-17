@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:replace="fragments/header :: header-css" ></div>
+   
+   
+</head>
+<body>
+
+<div th:replace="fragments/header :: rheader" ></div>
+
+<div class="container" align="center">
+  <div class="starter-template">
+         <h1 th:inline="text">Teacher's details :</h1>
+           <form th:action="@{/logout}" method="post" id="teacher-form"> 
+           
+            <table>
+            <tr>
+             	<td>
+                	<table border="1">
+                	       <tr><td>Name:</td><td th:text="${teacherInfo.userName}" align="center"></td></tr>
+                           <tr><td>Subject:</td><td th:text="${teacherInfo.subject}" align="center"></td></tr>
+                           <tr><td>Class/Standard:</td><td th:text="${teacherInfo.standard}" align="center"></td></tr>
+                           <tr><td>Role:</td><td th:text="${teacherInfo.roles}" align="center"></td></tr>
+                           <tr><td>Status:</td><td th:text="${teacherInfo.status}" align="center"></td></tr>
+                    </table>
+                </td>
+                <td>
+                    <table border="1">
+                          <tr>
+                   			 <th>Month</th>
+                    		 <th>Solution per month</th>
+                    		 <th>Session-Year</th>
+                		  </tr>
+            			  <tr th:each="answer : ${totalAnswer}">
+                    		 <td th:text="${answer.monthData}"      align="center"></td>
+                    		 <td th:text="${answer.answerData}"      align="center"></td>
+                    		 <td th:text="${answer.sessionYear}"      align="center"></td>
+            			  </tr>
+            		</table>
+             	</td>
+             </tr>
+             </table>
+			
+			<a th:href="@{/home}">  <input type="button" value="Cancel"/> </a>
+		</form>  
+	</div>
+</div>
+
+
+
+<div th:replace="fragments/footer :: footer" ></div>
+<script type="text/javascript" src="webjars/jquery/2.2.4/jquery.min.js"></script> 
+
+</body>
+</html>

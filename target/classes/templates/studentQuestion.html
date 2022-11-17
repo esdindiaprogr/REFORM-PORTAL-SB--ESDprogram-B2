@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Student Question Listing</title>
+ <div th:replace="fragments/header :: header-css"/>
+</head>
+<body>
+
+<div th:replace="fragments/header :: header" ></div>
+
+	<div class="container">
+
+	<h2>
+		<span style="font-size: 1.5em;">Student Question information</span>
+	</h2>
+	<table style="width: 347.21875px;" border=1>
+		<tbody>
+			<tr>
+				<td><strong>S.No</strong></td>
+				<td><strong>Student ID</strong></td>
+				<td><strong>Question</strong></td>
+				<td><strong>Teacher</strong></td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>Vijay</td>
+				<td>area of circle</td>
+				<td th:text="${message}"> </td>
+			</tr>
+		</tbody>
+	</table>
+
+
+</div>
+	<!-- /.container -->
+	<div th:replace="fragments/footer :: footer"></div>
+ <!--  <script src="/js/main.js" ></script> -->
+</body>
+</html>

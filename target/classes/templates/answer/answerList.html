@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: header-css"></div>
+    
+    <style>
+table, th, td {
+	border: 1px solid blue;
+}
+</style>
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"></div>
+
+	<div class="container" align="center">
+
+    <div class="starter-template">
+         <h1 th:inline="text"> [[${#httpServletRequest.remoteUser}]]!</h1>
+
+ 			<form th:action = "@{/user/search/answer}" method="post" >
+ 
+ 						<div>
+						<span th:inline="text"> Type answer text :  </span> <input type="text" name="answer"/> <input type="submit" value="Search"/>
+						 </div> <div>&nbsp;</div>
+ 
+			<table border=1>
+				<tr>
+					<th>Answer Id</th>
+					<th>Question Id</th>
+					<th>Answer</th>
+					<th>Student Name</th>
+					<th>File Name</th>
+				</tr>
+				<tr th:if="${answerList.empty}">
+					<td colspan="2">No Answer Available</td>
+				</tr>
+				<tr th:each="answer : ${answerList}">
+					<td th:text="${answer.id}"      align="center"></td>
+					<td th:text="${answer.question_id}"      align="center"></td>
+					<td th:text="${answer.answer}"  align="center"></td>
+					<td th:text="${answer.studentName}" align="center"></td>
+				
+					<td> <a th:href="@{/user/{fileName} (fileName=${answer.id})}" th:text="${answer.fileName}" ></a></td>
+					<td> <a th:href="@{/admin/answer/edit(aid=${answer.id},qid=${answer.question_id})}"> edit</a></td>
+					<td> <a th:href="@{/user/answer/discuss(aid=${answer.id},qid=${answer.question_id})}"> discuss</a></td>
+				</tr>
+			</table>
+			
+			<div>&nbsp;</div>
+							<div>
+							Total items: [[${totalItems}]] - current page [[${currentPage}]] of  [[${totalPages}]]
+							 &nbsp; - &nbsp;
+							 
+							  <a th:if="${currentPage > 1}"  th:href ="@{/user/answerList/1}"> First</a>
+									<span th:unless="${currentPage>1}"> First</span>
+							 &nbsp;
+							 <a th:if="${currentPage > 1}"  th:href ="@{'/user/answerList/' + ${currentPage-1}}"> Previous</a>
+									<span th:unless="${currentPage>1}"> Previous</span> 
+							  &nbsp; - &nbsp;
+							<span th:each="i: ${#numbers.sequence(1,totalPages)}">
+									<a th:if="${i != currentPage}"  th:href ="@{'/user/answerList/' +${i}}"> [[${i}]]</a>
+									<span th:unless="${i != currentPage}"> [[${i}]]</span>
+							</span>&nbsp;
+							
+							  <a th:if="${currentPage < totalPages}"  th:href ="@{'/user/answerList/'+${currentPage+1}}"> Next</a>
+									<span th:unless="${currentPage < totalPages}"> Next</span>
+							&nbsp;
+							 <a th:if="${currentPage < totalPages}"  th:href ="@{'/user/answerList/' +${totalPages}}"> Last</a>
+									<span th:unless="${currentPage < totalPages}"> Last</span> 
+							</div>
+			
+      </form>
+          <a th:href="@{/home}">  <input type="submit" value="Cancel"/> </a>
+  </div>
+</div>
+<!-- /.container -->
+<div th:replace ="fragments/footer :: footer"></div>
+</body>
+</html>

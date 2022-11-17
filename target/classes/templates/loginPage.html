@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>User creation form</title>
+ <div th:replace="fragments/header :: header-css"/>
+ 
+ </head>
+<body>
+
+	<div th:replace="fragments/header :: header"></div>
+	<div class="container">
+		<div class="starter-template" align="center">
+			<h1>New User</h1>
+			<form action="#" th:action="@{/admin/userCreation}" th:object="${user}" method="post">
+				<table >
+					<tr>
+						<td >First Name</td>
+						<td ><input id="firstName" th:field="*{firstName}" required/> </td>
+                        </tr>
+                        <tr>
+                        <td>Last Name</td>
+						<td><input id="lastName" th:field="*{lastName}"  required/> </td> 
+                        </tr>
+                         <tr>
+                        <td> Subject</td> 
+                        <td><select id="subject" name="subject" required>
+								<option value="mat">Mathematics</option>
+								<option value="phy">Physics</option>
+								<option value="che">Chemistry</option>
+								<option value="eng">English</option>
+								<option value="sos">Social Science</option>
+								<option value="eco">Economics</option>
+						     </select> </td></tr>
+                             
+					<tr>
+						<td>Password</td>
+						<td><input id="password" name="password" type="password"  th:field="${user.password}" required/></td></tr> <tr>
+						<td>Class/Standard</td>
+						<td>
+                        <select id="standard" name="standard" required>
+								<option value="6">Six</option>
+                                <option value="7">Seven</option>
+                                <option value="8">Eight</option>
+                                <option value="9">Nine</option>
+                                <option value="10">Ten</option>
+                                <option value="11">Eleven</option>
+                                <option value="12">Twelve</option>
+						     </select>
+                        </td> </tr>
+                        
+
+					<tr>
+						<td>Role</td>
+						<td><select id="role" th:field="${user.roles}" required>
+								<option th:value="ROLE_ADMIN">Administrator</option>
+								<option th:value="ROLE_USER">User</option>
+								<option th:value="ROLE_SUPER">Super User</option>
+								
+						</select></td></tr>
+                       
+					 </table>   
+					<div>
+                    
+						<input type="submit" value="Save" />
+						 <a th:href="@{/home}"><input type="button" value="Cancel" /></a>
+						
+					</div>
+			</form>
+          <h3>* Remember password or connect to super user.</h3> 
+		</div>
+
+	</div>
+	<!-- /.container -->
+
+	<div th:replace="fragments/footer :: footer" /></div>
+
+</body>
+</html>

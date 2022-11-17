@@ -1,0 +1,35 @@
+2022-11-17 19:48:46.485  INFO 21492 --- [restartedMain] c.e.a.AccessingDataJpaApplication        : Starting AccessingDataJpaApplication using Java 17.0.4 on LAPTOP-JB2HBBU2 with PID 21492 (C:\Users\asus\java-project\angel-Code\target\classes started by asus in C:\Users\asus\java-project\angel-Code)
+2022-11-17 19:48:46.493  INFO 21492 --- [restartedMain] c.e.a.AccessingDataJpaApplication        : No active profile set, falling back to default profiles: default
+2022-11-17 19:48:46.557  INFO 21492 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-17 19:48:46.557  INFO 21492 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-17 19:48:47.467  INFO 21492 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-11-17 19:48:47.568  INFO 21492 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 5 JPA repository interfaces.
+2022-11-17 19:48:48.369  INFO 21492 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-17 19:48:48.382  INFO 21492 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-17 19:48:48.383  INFO 21492 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.46]
+2022-11-17 19:48:50.626  INFO 21492 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-17 19:48:50.626  INFO 21492 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4067 ms
+2022-11-17 19:48:50.666  INFO 21492 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-17 19:48:50.848  INFO 21492 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-17 19:48:50.855  INFO 21492 --- [restartedMain] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2022-11-17 19:48:51.083  INFO 21492 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-11-17 19:48:51.146  INFO 21492 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.31.Final
+2022-11-17 19:48:51.288  INFO 21492 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-11-17 19:48:51.394  INFO 21492 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-11-17 19:48:52.025  INFO 21492 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-11-17 19:48:52.034  INFO 21492 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-11-17 19:48:52.685  WARN 21492 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-11-17 19:48:52.899  INFO 21492 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-11-17 19:48:53.026  INFO 21492 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-17 19:48:53.301  INFO 21492 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-17 19:48:53.302  INFO 21492 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-11-17 19:48:53.328  INFO 21492 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-11-17 19:48:53.359  INFO 21492 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-11-17 19:48:53.566  INFO 21492 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAngleByIdUsingGET_1
+2022-11-17 19:48:53.585  INFO 21492 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: loginhelperUsingPOST_1
+2022-11-17 19:48:53.621  INFO 21492 --- [restartedMain] c.e.a.AccessingDataJpaApplication        : Started AccessingDataJpaApplication in 7.559 seconds (JVM running for 57.789)
+2022-11-17 19:48:53.623  INFO 21492 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2022-11-17 19:48:53.629  INFO 21492 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2022-11-17 19:49:06.227  INFO 21492 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-17 19:49:06.227  INFO 21492 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-17 19:49:06.228  INFO 21492 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms

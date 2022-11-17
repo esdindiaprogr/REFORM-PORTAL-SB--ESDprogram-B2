@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<meta charset="utf-8">
+<title>Student-teacher communication</title>
+<div th:replace="fragments/header :: header-css" />
+<body>
+	<div th:replace="fragments/header :: header"></div>
+	<div align="center">
+	<h3>This teacher and student communication tool.</h3>
+	<p>Three types of user in this application.</p>
+	
+	<table>
+	<tr><td>
+		user : Students <br /> <p>Student can as question on any<br />
+			subject. Considering that student may have many subject to<br />
+			learn. Student will ask question or raise his doubt and save it <br />
+			</p>
+		</td>
+		</tr>
+		<tr><td>admin : Teachers or admin.<br /> 
+			<p>user will answer the question and if feel that some image/picture<br/> 
+			is require to upload he can upload a picture. right now we are <br />
+			uploading a single picture. We can enhance this function under<br /> 
+			the discussion link of answer. Teacher will answer the question<br/>
+			</p>
+		</td></tr>
+		
+		<tr><td>super : Super / Principal.<br /> 
+		    <p>this user can access the
+			whole application. all links and tab are accessible to super user.<br />
+			super user can check the status of teacher and students. He can
+			monitor how question <br /> are responded by teacher.<br />
+			</p>
+		</td></tr>
+		
+	</table>
+	</div>
+
+</body>
+
+</html>

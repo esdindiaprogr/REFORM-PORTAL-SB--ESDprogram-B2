@@ -1,0 +1,43 @@
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:fragment="header-css">
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+	<link rel="stylesheet" th:href="@{/css/main.css}" />
+</div>
+<style>
+
+</style>
+</head>
+ <body>
+
+  <div th:fragment="header">
+  	  <nav class="navbar navbar-inverse">
+  		  <div class="container">
+  		 	  <div class="navbar-header">
+                 <a class="navbar-brand" th:href="@{/}">Home</a>
+                 <a class="navbar-brand" th:href="@{/super/admin/report}">Report</a>
+                 <a class="navbar-brand" th:href="@{/contact}">Contact</a>
+                 <a class="navbar-brand" th:href="@{/about}">About</a>
+                 <a class="navbar-brand" th:href="@{/admin/enterLoginId}">Change password</a>
+                <a class="navbar-brand" th:href="@{/logout}">Sign-Out</a>
+            </div>
+  		  </div>
+  	   </nav>
+  </div> 
+  
+    <div th:fragment="rheader">
+  	  <nav class="navbar navbar-inverse">
+  		 <div class="container">
+            <div class="navbar-header">
+	    		<a class="navbar-brand" th:href="@{/}">Home</a>
+        		<a class="navbar-brand" th:href="@{/super/admin/teacherList}">Teacher list</a> 
+        		<a class="navbar-brand" th:href="@{/super/admin/studentList(id=1)}">Student list</a> 
+ <!--        		<a class="navbar-brand" th:href="@{/super/admin/question}">Question list</a> 
+        		<a class="navbar-brand" th:href="@{/super/admin/answer}">Answer list</a>
+  -->            </div>
+  		  </div>
+  	   </nav>
+  </div>     
+</body>
+</html>

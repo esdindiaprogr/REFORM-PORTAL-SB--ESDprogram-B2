@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:replace="fragments/header :: header-css" />
+</head>
+<body>
+	<div th:replace="fragments/header :: rheader"></div>
+	<div class="container" align="center">
+		<div class="starter-template">
+			<h1 th:inline="text">Teacher's details :</h1>
+			<form action="#" method="post" id="teacher-form">
+				<table>
+					<thead>
+						<tr>
+							<th>Teacher's Id</th>
+							<th>Teacher's Name</th>
+							<th>Date</th>
+							<th>Subject</th>
+							<th>Class</th>
+							<th>Status</th>
+							<th>Get Report</th>
+							<th>Deactivate</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:if="${userList.empty}">
+							<td colspan="2">No User Available</td>
+						</tr>
+						<tr th:each="user : ${userList}">
+							<td th:text="${user.id}" align="center"></td>
+							<td><input type="text" name="userName" th:value="*{user.userName}" /></td>
+							<td th:text="${user.created_date}" align="center"></td>
+							<td th:text="${user.subject}" align="center"></td>
+							<td th:text="${user.standard}" align="center"></td>
+							<td th:text="${user.status}" align="center"></td>
+							<td><a th:href="@{/super/admin/performance(teacherName=${user.userName})}">Get info</a></td>
+							<td><a th:href="@{/super/admin/getTeacher(teacherName=${user.userName})}">Remove</a></td>
+						</tr>
+					</tbody>
+				</table>
+				<a th:href="@{/home}"> <input type="button" value="Cancel" />
+				</a>
+			</form>
+		</div>
+	</div>
+	<div th:replace="fragments/footer :: footer"></div>
+	<script type="text/javascript" src="webjars/jquery/2.2.4/jquery.min.js"></script>
+</body>
+</html>

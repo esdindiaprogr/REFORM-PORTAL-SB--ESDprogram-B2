@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Teacher Student Work Module</title>
+
+     <div th:replace="fragments/header :: header-css"></div>
+
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"></div>
+
+<div class="container">
+
+    <div class="starter-template" align="center">
+        <h1>Spring Boot Web Thymeleaf + Spring Security-Admin.html page</h1>
+        <h2>1. Visit <a th:href="@{/admin}">Admin page (Spring Security protected, Need Admin Role)</a></h2>
+        <h2>2. Visit <a th:href="@{/user}">User page (Spring Security protected, Need User Role)</a></h2>
+        <h2>3. Visit <a th:href="@{/user/questionList}">Student Question-Doubt page</a></h2>
+        <h2>4. Visit <a th:href="@{/user/question}">Ask a question</a></h2>
+        <h2>5. Visit <a th:href="@{/user/answer}">Answer of Student</a></h2>
+    </div>
+
+</div>
+<!-- /.container -->
+
+<div th:replace="fragments/footer :: footer"/>
+
+</body>
+</html>
