@@ -28,7 +28,7 @@ public class User {
     private Set<Role> roles;
 }
 Role JPA Entity
-package com.springboot.blog.entity;
+package com.rpsb.ESD.model;
 
 import lombok.Getter;
 import lombok.Setter;
