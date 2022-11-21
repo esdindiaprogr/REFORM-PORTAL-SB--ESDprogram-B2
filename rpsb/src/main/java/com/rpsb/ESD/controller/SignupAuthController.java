@@ -1,4 +1,4 @@
-package com.springboot.blog.controller;
+package com.rpsb.ESD.controller;
 
 import com.springboot.blog.entity.Role;
 import com.springboot.blog.entity.User;
@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collections;
 
-@Api(value = "Auth controller exposes siginin and signup REST APIs")
+@Api(value = "Auth controller exposes  signup REST APIs")
 @RestController
 @RequestMapping("/api/v1/auth")
 public class AuthController {
@@ -45,7 +45,7 @@ public class AuthController {
     @Autowired
     private JwtTokenProvider tokenProvider;
 
-    @ApiOperation(value = "REST API to Register or Signup user to Blog app")
+    @ApiOperation(value = "REST API to Register or Signup user")
     @PostMapping("/signin")
     public ResponseEntity<JWTAuthResponse> authenticateUser(@RequestBody LoginDto loginDto){
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
