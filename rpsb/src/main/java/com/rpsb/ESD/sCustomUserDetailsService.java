@@ -1,4 +1,4 @@
-package com.springboot.blog.security;
+package com.rpsb.ESD.security;
 
 import com.springboot.blog.entity.Role;
 import com.springboot.blog.entity.User;
