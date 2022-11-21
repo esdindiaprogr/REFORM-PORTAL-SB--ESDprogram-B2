@@ -1,4 +1,4 @@
-package com.springboot.blog.controller;
+package com.rpsb.ESD.controller;
 
 import com.springboot.blog.payload.CommentDto;
 import com.springboot.blog.service.CommentService;
